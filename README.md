@@ -1,12 +1,138 @@
-# React + Vite
+# 🌾 SellSmart – Farmers Crop Price Online Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SellSmart is a React-based web application created to help farmers easily view crop market prices, calculate profits, and make better decisions about where to sell their goods.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+### 🔓 Public (Before Login)
+Users who are not logged in can only access:
+- 🏠 Home
+- 💹 Market Prices
+- 🔑 Login
+- 📝 Signup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+❌ Profit Calculator is **not visible** before login.
+
+---
+
+### 🔐 After Login
+Once a user logs in, the navbar updates dynamically and shows:
+- 🏠 Home
+- 💹 Market Prices
+- 💰 Profit Calculator
+- 👤 Profile
+- 🚪 Logout
+
+---
+
+## 👤 Profile Page
+The profile page displays:
+- Username (user's email or name)
+- Logout button
+
+---
+
+## 💰 Profit Calculator
+Allows farmers to estimate profit based on:
+- Crop price
+- Market selling value
+- Quantity
+- Transport cost
+- Final estimated profit
+
+---
+
+## 🛠 Tech Stack
+- React.js
+- React Router
+- LocalStorage (for auth state)
+- CSS (custom styles inside `assets/`)
+- Optional backend (Django/Node depending on integration)
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+│
+├── components/
+│   ├── Navbar.jsx
+│   ├── ProtectedRoute.jsx
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── MarketPrices.jsx
+│   ├── Login.jsx
+│   ├── Signup.jsx
+│   ├── ProfitCalculator.jsx
+│   ├── Profile.jsx
+│
+├── assets/
+│   ├── navbar.css
+│   ├── auth.css
+│   ├── home.css
+│
+├── App.js
+└── index.js
+```
+
+---
+
+## 🔧 Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/yourusername/sellsmart.git
+cd sellsmart
+```
+
+### 2️⃣ Install Dependencies
+```bash
+npm install
+```
+
+### 3️⃣ Start the Development Server
+```bash
+npm start
+```
+
+---
+
+## 🔐 Authentication Logic
+- Login and Signup store the user's email in `localStorage`
+- Navbar reads login status and updates links
+- ProtectedRoute ensures only logged-in users access:
+  - Profit Calculator
+  - Profile Page
+
+---
+
+## 📌 Purpose of SellSmart
+SellSmart helps farmers:
+- Check crop prices across multiple states & cities
+- View market price per quintal
+- Make smarter selling decisions
+- Calculate profitability before selling
+- Use an easy and modern interface
+
+---
+
+## ✔️ Current Status
+- Login & Signup working
+- Navbar updates correctly after login
+- Profile page implemented
+- Profit Calculator added
+- Market Prices page structured
+
+---
+
+## 🤝 Contributions
+Feel free to contribute or improve features.
+
+---
+
+## 📄 License
+This project is open-source and free to use.
