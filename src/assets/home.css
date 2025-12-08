@@ -1,0 +1,107 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 84.7vh;
+  font-family: 'Arial', sans-serif;
+  background-image: url(../../public/home.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #2d3436;
+  padding: 20px;
+}
+
+/* Info section with paragraph + image side by side */
+.info-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* space between text and image */
+  margin-top: 50px;
+  flex-wrap: wrap; /* responsive stacking on small screens */
+}
+
+/* Welcome heading */
+.info-section h1 {
+  width: 50%;
+  text-align: center;
+  color: rgb(245, 204, 101);
+  padding: 20px 20px ;
+  border-radius: 20px;
+  background-color: hsl(123, 46%, 17%);
+  text-shadow: 1px 1px 3px rgb(141, 115, 49);
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Description paragraph */
+.info-section p {
+  background-color: rgb(245, 204, 101);
+  color: #2d3436;
+  font-weight: 600 ;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 500px;
+  line-height: 1.6;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Farmers image */
+.farmers-img {
+  width: 100%;
+  margin-top: -10px;
+  max-width: 200px;
+  height: 300px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Get Started button */
+.home-container button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: hsl(123, 39%, 23%);
+  color: rgb(246, 196, 69);
+  border: none;
+  border-radius: 20px;
+  font-weight: 700;
+  box-shadow: 1px 1px 3px white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.home-container button:hover {
+  background-color: #357abe;
+  color: black;
+}
+
+/* Responsive design */
+@media screen and (max-width: 900px) {
+  .info-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-section p,
+  .farmers-img {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-container h1 {
+    font-size: 32px;
+  }
+
+  .info-section p {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .home-container button {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+}

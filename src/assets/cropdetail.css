@@ -1,0 +1,71 @@
+/* src/assets/market.css */
+
+/* Container for the crop details */
+.crop-detail-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px 30px;
+  background-color: rgb(245, 204, 101) ;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Heading */
+.crop-detail-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* Table */
+.crop-detail-container table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+/* Table Header */
+.crop-detail-container th {
+  background-color: hsl(123, 36%, 21%);
+  color: rgb(245, 204, 101);
+  padding: 12px;
+  text-align: left;
+  border-radius: 4px;
+}
+
+/* Table Body */
+.crop-detail-container td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+  color: hsl(123, 36%, 21%);
+}
+
+/* Alternate row colors */
+.crop-detail-container tr:nth-child(even) {
+  background-color:rgb(245, 204, 101) ;
+}
+
+/* Hover effect */
+.crop-detail-container tr:hover {
+  background-color: #eaf2f8;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .crop-detail-container {
+    padding: 15px 20px;
+  }
+
+  .crop-detail-container h1 {
+    font-size: 22px;
+  }
+
+  .crop-detail-container th,
+  .crop-detail-container td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
