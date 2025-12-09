@@ -16,7 +16,7 @@ body {
   min-height: 90vh;
 }
 .parent{
-    background-image: url(../../public/about\ background.jpg);
+    background-image: url(../../public/about_background.jpg);
   margin-top: 40px;
   padding: 30px;
   border-radius: 12px;
