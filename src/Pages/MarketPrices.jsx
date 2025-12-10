@@ -2,46 +2,48 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/market.css";
 
+// GitHub Pages / Vite safe base URL
+const BASE = import.meta.env.BASE_URL;
+
 // Data for crops grouped by categories
 const cropsData = {
   Fruits: [
-    { id: 1, name: "Mango", image: "/mango.jpg" },
-    { id: 2, name: "Apple", image: "/apple.webp" },
-    { id: 3, name: "Banana", image: "/banana.jpg" },
-    { id: 9, name: "Grapes", image: "/grapes.webp" },
-    { id: 4, name: "Mango", image: "/mango.jpg" },
-    { id: 5, name: "Papaya", image: "/papaya.jpg" },
-    { id: 6, name: "Pomegranate", image: "/pomegranate.webp" }
+    { id: 1, name: "Mango", image: `${BASE}mango.jpg` },
+    { id: 2, name: "Apple", image: `${BASE}apple.webp` },
+    { id: 3, name: "Banana", image: `${BASE}banana.jpg` },
+    { id: 9, name: "Grapes", image: `${BASE}grapes.webp` },
+    { id: 4, name: "Mango", image: `${BASE}mango.jpg` },
+    { id: 5, name: "Papaya", image: `${BASE}papaya.jpg` },
+    { id: 6, name: "Pomegranate", image: `${BASE}pomegranate.webp` }
   ],
   Vegetables: [
-    { id: 7, name: "Potato", image: "/potato.jpg" },
-    { id: 8, name: "Tomato", image: "/tomato.jpg" },
-    { id: 9, name: "Cabbage", image: "/cabbage.jpg" },
-    { id: 10, name: "Cauliflower", image: "/cauliflower.jpg" },
-    { id: 11, name: "Ladyfinger", image: "/ladyfinger.jpg" },
-    { id: 12, name: "Onion", image: "/onion.webp" },
-    { id: 13, name: "BottleGourd", image: "/bottlegourd.jpeg" }
+    { id: 7, name: "Potato", image: `${BASE}potato.jpg` },
+    { id: 8, name: "Tomato", image: `${BASE}tomato.jpg` },
+    { id: 9, name: "Cabbage", image: `${BASE}cabbage.jpg` },
+    { id: 10, name: "Cauliflower", image: `${BASE}cauliflower.jpg` },
+    { id: 11, name: "Ladyfinger", image: `${BASE}ladyfinger.jpg` },
+    { id: 12, name: "Onion", image: `${BASE}onion.webp` },
+    { id: 13, name: "BottleGourd", image: `${BASE}bottlegourd.jpeg` }
   ],
   Cereals: [
-    { id: 14, name: "Wheat", image: "/wheat.jpg" },
-    { id: 15, name: "Rice", image: "/rice.jpg" },
-    { id: 16, name: "Maize", image: "/maize.jpg" },
-    { id: 17, name: "Bajra", image: "/bajra.jpg" },
-    { id: 18, name: "Chana", image: "/chana.webp" },
-    { id: 19, name: "Soyabean", image: "/soyabean.webp" },
-    { id: 20, name: "Chawali", image: "/chawali.jpeg" },
-    { id: 21, name: "Masoor", image: "/masoor.webp" },
-    { id: 22, name: "Moong", image: "/moong.jpg" },
-    { id: 23, name: "Mustard", image: "/mustard.png" },
-    { id: 24, name: "Sesame", image: "/sesame.jpeg" },
-    { id: 25, name: "Tur", image: "/tur.jpg" }
+    { id: 14, name: "Wheat", image: `${BASE}wheat.jpg` },
+    { id: 15, name: "Rice", image: `${BASE}rice.jpg` },
+    { id: 16, name: "Maize", image: `${BASE}maize.jpg` },
+    { id: 17, name: "Bajra", image: `${BASE}bajra.jpg` },
+    { id: 18, name: "Chana", image: `${BASE}chana.webp` },
+    { id: 19, name: "Soyabean", image: `${BASE}soyabean.webp` },
+    { id: 20, name: "Chawali", image: `${BASE}chawali.jpeg` },
+    { id: 21, name: "Masoor", image: `${BASE}masoor.webp` },
+    { id: 22, name: "Moong", image: `${BASE}moong.jpg` },
+    { id: 23, name: "Mustard", image: `${BASE}mustard.png` },
+    { id: 24, name: "Sesame", image: `${BASE}sesame.jpeg` },
+    { id: 25, name: "Tur", image: `${BASE}tur.jpg` }
   ],
   "Other Crops": [
-    { id: 26, name: "Cotton", image: "/Cotton.JPG" },
-    { id: 27, name: "Groundnuts", image: "/groundnut.jpg" },
-    { id: 28, name: "Sugarcane", image: "/Sugarcane.jpg" },
-    { id: 29, name: "Sunflower", image: "/sunflower.jpg" },
-
+    { id: 26, name: "Cotton", image: `${BASE}Cotton.JPG` },
+    { id: 27, name: "Groundnuts", image: `${BASE}groundnut.jpg` },
+    { id: 28, name: "Sugarcane", image: `${BASE}Sugarcane.jpg` },
+    { id: 29, name: "Sunflower", image: `${BASE}sunflower.jpg` }
   ],
 };
 
@@ -55,12 +57,16 @@ const MarketPrices = () => {
       {Object.keys(cropsData).map((category) => (
         <div key={category} className="section">
           <h2 className="section-title">{category}</h2>
+
           <div className="crop-cards">
             {cropsData[category].map((crop) => (
               <div key={crop.id} className="crop-card">
                 <img src={crop.image} alt={crop.name} />
                 <h3>{crop.name}</h3>
-                <button className="view-btn"onClick={() => navigate(`/crop/${crop.name}`)}>
+                <button
+                  className="view-btn"
+                  onClick={() => navigate(`/crop/${crop.name}`)}
+                >
                   View Prices
                 </button>
               </div>
