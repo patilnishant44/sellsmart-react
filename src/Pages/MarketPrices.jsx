@@ -2,22 +2,47 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/market.css";
 
+// ✅ Images are inside public/ folder
+// ✅ Use absolute paths starting with "/"
+// ✅ Vite will automatically handle base path during build
+
 const cropsData = {
   Fruits: [
-    { id: 1, name: "Mango", image: new URL("/mango.jpg", import.meta.url).href },
-    { id: 2, name: "Apple", image: new URL("/apple.webp", import.meta.url).href },
-    { id: 3, name: "Banana", image: new URL("/banana.jpg", import.meta.url).href },
-    { id: 9, name: "Grapes", image: new URL("/grapes.webp", import.meta.url).href },
-    { id: 5, name: "Papaya", image: new URL("/papaya.jpg", import.meta.url).href },
-    { id: 6, name: "Pomegranate", image: new URL("/pomegranate.webp", import.meta.url).href },
+    { id: 1, name: "Mango", image: "/mango.jpg" },
+    { id: 2, name: "Apple", image: "/apple.webp" },
+    { id: 3, name: "Banana", image: "/banana.jpg" },
+    { id: 9, name: "Grapes", image: "/grapes.webp" },
+    { id: 5, name: "Papaya", image: "/papaya.jpg" },
+    { id: 6, name: "Pomegranate", image: "/pomegranate.webp" },
   ],
   Vegetables: [
-    { id: 7, name: "Potato", image: new URL("/potato.jpg", import.meta.url).href },
-    { id: 8, name: "Tomato", image: new URL("/tomato.jpg", import.meta.url).href },
-    { id: 9, name: "Cabbage", image: new URL("/cabbage.jpg", import.meta.url).href },
-    { id: 10, name: "Cauliflower", image: new URL("/cauliflower.jpg", import.meta.url).href },
-    { id: 11, name: "Ladyfinger", image: new URL("/ladyfinger.jpg", import.meta.url).href },
-    { id: 12, name: "Onion", image: new URL("/onion.webp", import.meta.url).href },
+    { id: 7, name: "Potato", image: "/potato.jpg" },
+    { id: 8, name: "Tomato", image: "/tomato.jpg" },
+    { id: 9, name: "Cabbage", image: "/cabbage.jpg" },
+    { id: 10, name: "Cauliflower", image: "/cauliflower.jpg" },
+    { id: 11, name: "Ladyfinger", image: "/ladyfinger.jpg" },
+    { id: 12, name: "Onion", image: "/onion.webp" },
+    { id: 13, name: "BottleGourd", image: "/bottlegourd.jpeg" },
+  ],
+  Cereals: [
+    { id: 14, name: "Wheat", image: "/wheat.jpg" },
+    { id: 15, name: "Rice", image: "/rice.jpg" },
+    { id: 16, name: "Maize", image: "/maize.jpg" },
+    { id: 17, name: "Bajra", image: "/bajra.jpg" },
+    { id: 18, name: "Chana", image: "/chana.webp" },
+    { id: 19, name: "Soyabean", image: "/soyabean.webp" },
+    { id: 20, name: "Chawali", image: "/chawali.jpeg" },
+    { id: 21, name: "Masoor", image: "/masoor.webp" },
+    { id: 22, name: "Moong", image: "/moong.jpg" },
+    { id: 23, name: "Mustard", image: "/mustard.png" },
+    { id: 24, name: "Sesame", image: "/sesame.jpeg" },
+    { id: 25, name: "Tur", image: "/tur.jpg" },
+  ],
+  "Other Crops": [
+    { id: 26, name: "Cotton", image: "/Cotton.JPG" },
+    { id: 27, name: "Groundnuts", image: "/groundnut.jpg" },
+    { id: 28, name: "Sugarcane", image: "/Sugarcane.jpg" },
+    { id: 29, name: "Sunflower", image: "/sunflower.jpg" },
   ],
 };
 
